@@ -1,9 +1,8 @@
 const eyeballs = document.querySelectorAll('.eye img')
 const eye = document.querySelectorAll('.eye')
+const cursoricon = document.querySelector('.cursoricon')
 
 document.onmousemove = function (e) {
-
-
 
     for (let i = 0; i < 2; i++) {
 
@@ -15,4 +14,9 @@ document.onmousemove = function (e) {
         eyeballs[i].style.transform = 'translate(-50%, -50%);'
     }
 }
-console.log(eye[0].clientWidth);
+
+document.addEventListener('mousemove', (e) => {
+    cursoricon.style.left = `${e.clientX}px`
+    cursoricon.style.top = `${e.clientY}px`
+    cursoricon.style.transform = `translate(-50%, -50%)`
+})
